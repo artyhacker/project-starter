@@ -21,6 +21,7 @@ const Todo: React.FC = observer(() => {
       margin: '10rem auto',
       border: '1px solid #f2f2f2',
       padding: '1rem',
+      overflow: 'auto',
     }}
     >
       <div>
@@ -30,9 +31,9 @@ const Todo: React.FC = observer(() => {
           value={Store.text}
           id="input-text"
           placeholder="输入文字，按回车键添加"
-          style={{ width: '50%' }}
+          style={{ width: '50%', height: '2rem' }}
         />
-        <button type="button" onClick={() => Store.addItem()}>ADD</button>
+        <button type="button" onClick={() => Store.addItem()} style={{ height: '2rem', width: '3rem', marginLeft: '1rem' }}>ADD</button>
       </div>
       <h1>Todo List</h1>
       {Store.list.map((todo) => (

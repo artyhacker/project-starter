@@ -15,8 +15,10 @@ class TodoStore {
   }
 
   @action addItem() {
-    this.list = [{ text: this.text, id: Math.random(), done: false }, ...this.list];
-    this.text = '';
+    if (this.text) {
+      this.list = [{ text: this.text, id: Math.random(), done: false }, ...this.list];
+      this.text = '';
+    }
   }
 
   @action toggleItem(todo: TodoItem) {
